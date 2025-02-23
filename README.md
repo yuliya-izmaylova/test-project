@@ -12,5 +12,5 @@ or
 but for the sake of simplicity I've left it as it is.
 5. For real case, I would use .env file for storing API urls and keys, but for the sake of simplicity I've left it in the code.
 6. Interfaces were added to add a possibility to switch BIN and currency rates providers.
-7. **BIN service is not working properly itself. It has harsh restrictions for calls quantity**
+7. **BIN service is not working properly itself. It has restrictions for calls quantity**
 
