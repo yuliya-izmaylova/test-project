@@ -1,4 +1,4 @@
-#Solution comments
+# Solution comments
 
 1. Solution implemented as laravel console command. Please find the code in the following repository: app/Console/Commands.
 Please, use
