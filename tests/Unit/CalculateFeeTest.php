@@ -51,7 +51,7 @@ class CalculateFeeTest extends TestCase
         $service =  new FeeCalculationService($this->countryCodeService, $this->rateService);
         $convertedAmount = $service->convertToEuro($amount, $currency);
 
-        $this->assertEquals(ceil($expectedResult), ceil($convertedAmount));
+        $this->assertEquals(round($expectedResult, 2), round($convertedAmount, 2));
     }
 
     public static function conversionProvider(): array
