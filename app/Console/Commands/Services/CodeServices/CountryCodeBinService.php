@@ -14,6 +14,9 @@ class CountryCodeBinService implements CountyCodeServiceInterface
     public function isEuCountry(string $bin): bool
     {
         $countryCode = $this->getCountryCode($bin);
+        if (empty($countryCode)) {
+            throw new \Exception('Error getting country code');
+        }
         $euCountries = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PO', 'PT', 'RO', 'SE', 'SI', 'SK'];
         return in_array($countryCode, $euCountries);
     }
@@ -26,6 +29,6 @@ class CountryCodeBinService implements CountyCodeServiceInterface
             throw new \Exception('Error getting country code');
         }
         $result = json_decode($countryCode);
-        return $result->country->alpha2;
+        return data_get($result, 'country.alpha2');
     }
 }
