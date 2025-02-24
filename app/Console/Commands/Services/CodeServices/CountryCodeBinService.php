@@ -22,7 +22,7 @@ class CountryCodeBinService implements CountyCodeServiceInterface
     }
 
 
-    public function getCountryCode($bin): string
+    public function getCountryCode($bin): ?string
     {
         $countryCode = file_get_contents($this->binlistBaseURL . $bin);
         if (!$countryCode) {
